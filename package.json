@@ -1,0 +1,24 @@
+{
+  "name": "renders",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "esbuild ./src/client/index.jsx --bundle --outfile=dist/main.js --define:process.env.NODE_ENV='\"development\"'",
+    "ssr": "babel-node --presets @babel/preset-react ./src/server/index.js",
+    "ssg": "babel-node --presets @babel/preset-react ./src/server/ssg.js"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "esbuild": "^0.8.33",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}
